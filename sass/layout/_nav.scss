@@ -1,0 +1,130 @@
+.nav {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+
+  &__logo-box {
+    margin-left: auto;
+    position: relative;
+  }
+
+  &__logo {
+    font-size: 4rem;
+
+    &::after,
+    &::before {
+      content: "";
+      position: absolute;
+      height: 0.7rem;
+      background-color: $color-primary;
+    }
+
+    &::after {
+      top: 3.5rem;
+      width: 2.6rem;
+      left: -2.8rem;
+    }
+
+    &::before {
+      top: 2.3rem;
+      width: 1.3rem;
+      left: -1.5rem;
+    }
+  }
+
+  &__logo-box:hover &__logo {
+    color: $color-primary;
+  }
+
+  &__logo-box:hover &__logo::after,
+  &__logo-box:hover &__logo::before {
+    background-color: $color-grey-dark-1;
+  }
+
+  &__items {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+
+    @include respond(tab-port) {
+      background-color: #fff;
+      padding: 1rem;
+      position: absolute;
+      top: 7rem;
+      right: 0;
+      width: 100%;
+      height: 55vh;
+      flex-direction: column;
+      justify-content: center;
+      display: none;
+    }
+  }
+
+  &__input {
+    display: none;
+  }
+
+  &__input:checked ~ &__items {
+    display: flex;
+
+    & .nav__list {
+      flex-direction: column;
+    }
+  }
+
+  &__label {
+    background-color: $color-primary;
+    border-radius: 50%;
+    width: 5rem;
+    height: 5rem;
+    position: relative;
+    display: none;
+    @include respond(tab-port) {
+      display: block;
+    }
+  }
+
+  &__label span {
+    display: inline-block;
+    width: 3rem;
+    height: 0.5rem;
+    background-color: $color-grey-light-1;
+    position: absolute;
+    top: 2.5rem;
+    left: 1.1rem;
+
+    &::after,
+    &::before {
+      content: "";
+      width: 3rem;
+      height: 0.25rem;
+      display: inline-block;
+      background-color: $color-grey-light-1;
+      position: absolute;
+    }
+
+    &::after {
+      top: -0.8rem;
+      left: 0rem;
+    }
+
+    &::before {
+      top: 1.1rem;
+      left: 0rem;
+    }
+  }
+
+  &__input:checked + &__label span::after {
+    transform: rotate(45deg);
+    top: -0.3rem;
+  }
+
+  &__input:checked + &__label span::before {
+    transform: rotate(-45deg);
+    top: -0.3rem;
+  }
+
+  &__input:checked + &__label span {
+    background-color: transparent;
+  }
+}

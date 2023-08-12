@@ -1,0 +1,34 @@
+%heading {
+  font-weight: 400;
+  color: #fff;
+  grid-column: 1/-1;
+}
+
+.heading-1th {
+  @extend %heading;
+  font-size: 4rem;
+}
+
+.heading-2th {
+  @extend %heading;
+  font-size: 3rem;
+
+  &--dark {
+    color: $color-grey-dark-2;
+  }
+}
+
+.heading-3th {
+  @extend %heading;
+  font-size: 2rem;
+
+  &--dark {
+    color: $color-grey-dark-2;
+  }
+}
+
+.heading-4th {
+  @extend %heading;
+  font-size: 1.8rem;
+  font-weight: 700;
+}

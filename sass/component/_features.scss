@@ -1,0 +1,81 @@
+.features {
+  background-image: linear-gradient(rgba(#73a5e2, 0.8), rgba(#73a5e2, 0.8)),
+    url("../../img/cars-driving-street-aerial-view.webp");
+  background-size: cover;
+  height: 20rem;
+  margin-bottom: 10rem;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+
+  @include respond(tab-port) {
+    display: block;
+    height: 35rem;
+    padding: 2rem;
+  }
+
+  &__column-divider {
+    display: flex;
+    gap: 2rem;
+    height: 10rem;
+
+    @include respond(tab-port) {
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    gap: 1rem;
+    color: #fff;
+    width: 25%;
+    padding: 1rem;
+    position: relative;
+
+    &:not(:last-child) {
+      &::after {
+        content: "";
+        position: absolute;
+        top: 1.6rem;
+        left: 0;
+        display: block;
+        width: 3px;
+        height: 6rem;
+        background-color: #fff;
+      }
+    }
+
+    @include respond(tab-port) {
+      &:not(:last-child) {
+        &::after {
+          content: none;
+        }
+      }
+      width: 100%;
+    }
+
+    h4 {
+      transform: translatey(2rem);
+    }
+  }
+
+  &__detail {
+    display: none;
+    font-size: 1.6rem;
+    line-height: 1.5;
+  }
+
+  &__item:hover &__detail {
+    display: block;
+  }
+
+  &__item:hover h4 {
+    transform: translatey(0);
+  }
+}

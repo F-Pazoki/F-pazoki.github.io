@@ -1,0 +1,35 @@
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  gap: 2rem;
+
+  font-size: $font-size-normal;
+  line-height: 1.5;
+  text-align: justify;
+
+  &__item {
+    padding: 2rem;
+
+    p {
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      color: #9b9b9b;
+    }
+
+    &:hover {
+      box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  &__img {
+    width: 100%;
+    border-radius: 5px;
+  }
+
+  &__heading {
+    font-weight: 600;
+    margin: 1rem 0;
+  }
+}

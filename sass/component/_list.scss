@@ -1,0 +1,16 @@
+.list {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+
+  &__link:link,
+  &__link:visited {
+    text-decoration: none;
+    font-size: $font-size-normal;
+    color: $color-grey-dark-1;
+  }
+
+  &__link:hover,&__link:active {
+    color: $color-primary;
+  }
+}
